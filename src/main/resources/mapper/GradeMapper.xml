@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.autumnclouds.sgms.mapper.GradeMapper">
+
+    <resultMap id="BaseResultMap" type="cn.autumnclouds.sgms.model.entity.Grade">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="studentId" column="student_id" jdbcType="BIGINT"/>
+            <result property="teachingClassId" column="teaching_class_id" jdbcType="BIGINT"/>
+            <result property="regularScore" column="regular_score" jdbcType="INTEGER"/>
+            <result property="midtermScore" column="midterm_score" jdbcType="INTEGER"/>
+            <result property="experimentalScore" column="experimental_score" jdbcType="INTEGER"/>
+            <result property="finalScore" column="final_score" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,student_id,teaching_class_id,
+        regular_score,midterm_score,experimental_score,
+        final_score
+    </sql>
+</mapper>
