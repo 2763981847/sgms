@@ -56,6 +56,8 @@ public class Grade implements Serializable {
     @TableField(value = "final_score")
     private Integer finalScore;
 
+
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
@@ -71,13 +73,7 @@ public class Grade implements Serializable {
             return false;
         }
         Grade other = (Grade) that;
-        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-                && (this.getStudentId() == null ? other.getStudentId() == null : this.getStudentId().equals(other.getStudentId()))
-                && (this.getTeachingClassId() == null ? other.getTeachingClassId() == null : this.getTeachingClassId().equals(other.getTeachingClassId()))
-                && (this.getRegularScore() == null ? other.getRegularScore() == null : this.getRegularScore().equals(other.getRegularScore()))
-                && (this.getMidtermScore() == null ? other.getMidtermScore() == null : this.getMidtermScore().equals(other.getMidtermScore()))
-                && (this.getExperimentalScore() == null ? other.getExperimentalScore() == null : this.getExperimentalScore().equals(other.getExperimentalScore()))
-                && (this.getFinalScore() == null ? other.getFinalScore() == null : this.getFinalScore().equals(other.getFinalScore()));
+        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId())) && (this.getStudentId() == null ? other.getStudentId() == null : this.getStudentId().equals(other.getStudentId())) && (this.getTeachingClassId() == null ? other.getTeachingClassId() == null : this.getTeachingClassId().equals(other.getTeachingClassId())) && (this.getRegularScore() == null ? other.getRegularScore() == null : this.getRegularScore().equals(other.getRegularScore())) && (this.getMidtermScore() == null ? other.getMidtermScore() == null : this.getMidtermScore().equals(other.getMidtermScore())) && (this.getExperimentalScore() == null ? other.getExperimentalScore() == null : this.getExperimentalScore().equals(other.getExperimentalScore())) && (this.getFinalScore() == null ? other.getFinalScore() == null : this.getFinalScore().equals(other.getFinalScore()));
     }
 
     @Override

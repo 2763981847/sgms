@@ -1,6 +1,7 @@
 package cn.autumnclouds.sgms.service;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -11,7 +12,7 @@ import java.util.stream.IntStream;
 public interface Randomizable<T> {
     T randomGenerate();
 
-    default Collection<T> randomGenerate(int count) {
+    default List<T> randomGenerate(int count) {
         return IntStream.range(0, count).parallel().mapToObj(i -> randomGenerate()).collect(Collectors.toList());
     }
 

@@ -44,4 +44,8 @@ public class RandomUtils {
     public static List<String> randomCourseName(int count) {
         return RandomUtil.randomEleList(List.of(COMMON_COURSES), count);
     }
+
+    public static String randomSemester() {
+        return RandomUtil.randomEle(List.of("2021-2022-1", "2021-2022-2", "2022-2023-1", "2022-2023-2", "2023-2024-1", "2023-2024-2"));
+    }
 }

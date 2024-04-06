@@ -17,7 +17,7 @@ public interface RandomlyAccessibleService<T> extends IService<T> {
     }
 
     default List<T> random(int count) {
-        return random(count, t -> t);
+        return RandomUtil.randomEleList(this.lambdaQuery().list().stream().toList(), count);
     }
 
 
