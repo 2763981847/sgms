@@ -4,30 +4,31 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
+
 import lombok.Data;
 
 /**
- * 
  * @TableName student
  */
-@TableName(value ="student")
+@TableName(value = "student")
 @Data
 public class Student implements Serializable {
     /**
-     * 
+     *
      */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
-     * 
+     *
      */
     @TableField(value = "name")
     private String name;
 
     /**
-     * 
+     *
      */
     @TableField(value = "gender")
     private Integer gender;
@@ -48,8 +49,8 @@ public class Student implements Serializable {
         }
         Student other = (Student) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-            && (this.getGender() == null ? other.getGender() == null : this.getGender().equals(other.getGender()));
+                && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
+                && (this.getGender() == null ? other.getGender() == null : this.getGender().equals(other.getGender()));
     }
 
     @Override
@@ -64,15 +65,6 @@ public class Student implements Serializable {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", name=").append(name);
-        sb.append(", gender=").append(gender);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
+        return STR."学号：\{id}       姓名： \{name}      性别：\{gender == 1 ? "男" : "女"}";
     }
 }

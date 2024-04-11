@@ -1,11 +1,11 @@
 package cn.autumnclouds.sgms.core.ui;
 
-import cn.autumnclouds.sgms.core.Sgms;
-import cn.autumnclouds.sgms.core.ui.menu.impl.MainMenu;
-import cn.autumnclouds.sgms.core.ui.menu.Menu;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
+import cn.autumnclouds.sgms.core.Sgms;
+import cn.autumnclouds.sgms.core.ui.menu.Menu;
+import cn.autumnclouds.sgms.core.ui.menu.impl.MainMenu;
+import jakarta.annotation.Resource;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Fu Qiujie

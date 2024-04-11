@@ -1,19 +1,21 @@
 package cn.autumnclouds.sgms.service.impl;
 
+
 import cn.autumnclouds.sgms.mapper.TeachingClassMapper;
 import cn.autumnclouds.sgms.model.entity.Course;
 import cn.autumnclouds.sgms.model.entity.Teacher;
 import cn.autumnclouds.sgms.model.entity.TeachingClass;
+import cn.autumnclouds.sgms.model.vo.TeachingClassVo;
 import cn.autumnclouds.sgms.service.CourseService;
 import cn.autumnclouds.sgms.service.TeacherService;
 import cn.autumnclouds.sgms.service.TeachingClassService;
 import cn.autumnclouds.sgms.util.RandomUtils;
-import cn.hutool.core.util.ArrayUtil;
-import cn.hutool.core.util.RandomUtil;
+import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -55,9 +57,17 @@ public class TeachingClassServiceImpl extends ServiceImpl<TeachingClassMapper, T
     public List<TeachingClass> listTeachingClassesInSameCourse(long teachingClassId) {
         TeachingClass teachingClass = this.getById(teachingClassId);
         if (teachingClass == null) {
-            return List.of();
+            return Collections.emptyList();
         }
         return this.lambdaQuery().eq(TeachingClass::getCourseId, teachingClass.getCourseId()).list();
+    }
+
+    @Override
+    public TeachingClassVo packageTeachingClass(TeachingClass teachingClass) {
+        TeachingClassVo teachingClassVo = BeanUtil.copyProperties(teachingClass, TeachingClassVo.class);
+        teachingClassVo.setTeacherName(teacherService.getById(teachingClass.getTeacherId()).getName());
+        teachingClassVo.setCourseName(courseService.getById(teachingClass.getCourseId()).getName());
+        return teachingClassVo;
     }
 }
 

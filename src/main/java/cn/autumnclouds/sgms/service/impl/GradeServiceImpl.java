@@ -1,21 +1,19 @@
 package cn.autumnclouds.sgms.service.impl;
 
+import cn.autumnclouds.sgms.mapper.GradeMapper;
+import cn.autumnclouds.sgms.model.entity.Grade;
 import cn.autumnclouds.sgms.model.entity.TeachingClass;
 import cn.autumnclouds.sgms.model.vo.GradeVo;
 import cn.autumnclouds.sgms.service.CourseService;
+import cn.autumnclouds.sgms.service.GradeService;
 import cn.autumnclouds.sgms.service.StudentService;
 import cn.autumnclouds.sgms.service.TeachingClassService;
-import cn.autumnclouds.sgms.util.RandomUtils;
 import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.util.RandomUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import cn.autumnclouds.sgms.model.entity.Grade;
-import cn.autumnclouds.sgms.service.GradeService;
-import cn.autumnclouds.sgms.mapper.GradeMapper;
-import org.springframework.beans.BeanUtils;
+import jakarta.annotation.Resource;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,6 +29,7 @@ public class GradeServiceImpl extends ServiceImpl<GradeMapper, Grade>
     private TeachingClassService teachingClassService;
 
     @Resource
+    @Lazy
     private StudentService studentService;
 
     @Resource

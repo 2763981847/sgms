@@ -4,13 +4,12 @@ import cn.autumnclouds.sgms.model.entity.Course;
 import cn.autumnclouds.sgms.model.entity.Grade;
 import cn.autumnclouds.sgms.model.entity.Student;
 import cn.autumnclouds.sgms.model.entity.TeachingClass;
-import cn.autumnclouds.sgms.model.vo.StudentVo;
 import cn.autumnclouds.sgms.service.*;
 import cn.hutool.core.util.RandomUtil;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -91,7 +90,9 @@ public class Sgms {
 
     public void generateGradeRandomly() {
         // 为每个学生随机生成成绩
-        gradeService.list().forEach(GradeService::setGradeRandomly);
+        List<Grade> gradeList = gradeService.list();
+        gradeList.forEach(GradeService::setGradeRandomly);
+        gradeService.updateBatchById(gradeList);
     }
 
     public void clearData() {

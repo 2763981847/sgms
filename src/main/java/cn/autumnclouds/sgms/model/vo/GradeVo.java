@@ -30,4 +30,11 @@ public class GradeVo {
 
 
     private Double totalScore;
+
+    @Override
+    public String toString() {
+        return STR."""
+                科目：\{courseName}   学生：\{studentName}   平时成绩：\{regularScore}   期中成绩：\{midtermScore}   实验成绩：\{experimentalScore}   期末成绩：\{finalScore}   总成绩：\{totalScore}
+                """;
+    }
 }

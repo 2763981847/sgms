@@ -1,6 +1,7 @@
 package cn.autumnclouds.sgms.service;
 
 import cn.autumnclouds.sgms.model.entity.TeachingClass;
+import cn.autumnclouds.sgms.model.vo.TeachingClassVo;
 
 import java.util.List;
 
@@ -13,4 +14,6 @@ public interface TeachingClassService extends Randomizable<TeachingClass>, Rando
     List<TeachingClass> randomGenerateWithFixedCourse(long courseId, int count);
 
     List<TeachingClass> listTeachingClassesInSameCourse(long teachingClassId);
+
+    TeachingClassVo packageTeachingClass(TeachingClass teachingClass);
 }

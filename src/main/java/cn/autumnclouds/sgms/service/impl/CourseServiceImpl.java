@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
  * @createDate 2024-04-02 15:21:37
  */
 @Service
-public class CourseImpl extends ServiceImpl<CourseMapper, Course>
+public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course>
         implements CourseService {
     @Override
     public List<Course> randomGenerate(int count) {

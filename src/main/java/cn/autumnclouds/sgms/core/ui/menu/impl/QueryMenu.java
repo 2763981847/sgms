@@ -15,11 +15,9 @@ public class QueryMenu extends Menu {
     @Override
     public void onShow() {
         System.out.println("1. 学生查询");
-        System.out.println("2. 教师查询");
-        System.out.println("3. 课程查询");
-        System.out.println("4. 教学班查询");
-        System.out.println("5. 选课情况查询");
-        System.out.println("6. 返回");
+        System.out.println("2. 教学班查询");
+        System.out.println("3. 排名查询");
+        System.out.println("4. 返回");
     }
 
     @Override
@@ -29,18 +27,12 @@ public class QueryMenu extends Menu {
                 return new StudentQueryMenu(this);
             }
             case "2": {
-
+                return new TeachingClassQueryMenu(this);
             }
             case "3": {
-
+                return new RankQueryMenu(this);
             }
             case "4": {
-
-            }
-            case "5": {
-
-            }
-            case "6": {
                 return prevMenu;
             }
             default: {

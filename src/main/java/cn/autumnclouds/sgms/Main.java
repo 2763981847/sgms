@@ -14,6 +14,7 @@ import java.util.Scanner;
  */
 @SpringBootApplication
 @MapperScan("cn.autumnclouds.sgms.mapper")
+
 public class Main {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(Main.class, args);

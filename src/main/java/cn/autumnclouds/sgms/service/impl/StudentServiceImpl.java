@@ -1,17 +1,17 @@
 package cn.autumnclouds.sgms.service.impl;
 
+
+import cn.autumnclouds.sgms.mapper.StudentMapper;
 import cn.autumnclouds.sgms.model.entity.Student;
 import cn.autumnclouds.sgms.model.vo.StudentVo;
 import cn.autumnclouds.sgms.service.GradeService;
+import cn.autumnclouds.sgms.service.StudentService;
 import cn.autumnclouds.sgms.util.RandomUtils;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import cn.autumnclouds.sgms.service.StudentService;
-import cn.autumnclouds.sgms.mapper.StudentMapper;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * @author Oreki
@@ -28,7 +28,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student>
     public Student randomGenerate() {
         Student student = new Student();
         student.setName(RandomUtils.randomChineseName());
-        student.setGender(RandomUtil.randomInt(0, 1));
+        student.setGender(RandomUtil.randomInt(0, 2));
         return student;
     }
 
